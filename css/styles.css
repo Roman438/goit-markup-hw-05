@@ -81,6 +81,17 @@ img {
   padding-bottom: 25px;
 }
 
+.header-nav.underline::after {
+  display: block;
+  outline: #188ce8;
+  width: 100%;
+  height: 4px;
+  background: var(--main-blue-color);
+  border-radius: 2px;
+  content: "";
+  position: relative;
+  top: 31px;
+}
 .logo {
   color: var(--main-blue-color);
   font-family: raleway, sans-serif;
