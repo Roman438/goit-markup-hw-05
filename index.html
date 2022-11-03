@@ -61,7 +61,9 @@
         <div class="hero-wrap">
           <div class="container">
             <h1>Ефективні рішення для вашого бізнесу</h1>
-            <button type="button" class="button">Замовити послугу</button>
+            <button type="button" class="button" data-modal-open>
+              Замовити послугу
+            </button>
           </div>
         </div>
       </section>
@@ -110,6 +112,7 @@
                 width="370"
                 height="294"
               />
+              <p>Десктопні додатки</p>
             </li>
             <li>
               <img
@@ -118,6 +121,7 @@
                 width="370"
                 height="294"
               />
+              <p>Мобільні додатки</p>
             </li>
             <li>
               <img
@@ -126,6 +130,7 @@
                 width="370"
                 height="294"
               />
+              <p>Дизайнерські рішення</p>
             </li>
           </ul>
         </div>
@@ -305,6 +310,12 @@
           </ul>
         </div>
       </section>
+      <section class="backdrop is-hidden" data-modal>
+        <div class="modal">
+          <p>e</p>
+          <button type="button" class="button-modal" data-modal-close>x</button>
+        </div>
+      </section>
     </main>
     <footer class="footer">
       <div class="container">
@@ -367,5 +378,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>

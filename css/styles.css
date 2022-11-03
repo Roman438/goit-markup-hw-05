@@ -13,6 +13,8 @@
   --portfolio-border-color: #eeeeee;
   --header-border-color: #ececec;
   --border-color: #afb1b8;
+  --background-our-works: rgba(47, 48, 58, 0.8);
+  --background-lift: rgba(33, 150, 243, 0.9);
 }
 
 body {
@@ -83,14 +85,13 @@ img {
 
 .header-nav.underline::after {
   display: block;
-  outline: #188ce8;
   width: 100%;
   height: 4px;
   background: var(--main-blue-color);
   border-radius: 2px;
   content: "";
-  position: relative;
-  top: 31px;
+  position: absolute;
+  bottom: -33px;
 }
 .logo {
   color: var(--main-blue-color);
@@ -118,6 +119,10 @@ img {
 
 .header-list {
   display: flex;
+}
+
+.header-list li {
+  position: relative;
 }
 
 .header-container .logo {
@@ -279,6 +284,26 @@ img {
   font-size: 14px;
   line-height: 1.71;
   color: var(--tel-color);
+}
+
+.our-works li {
+  position: relative;
+}
+
+.our-works p {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding: 27px 0px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--main-white-color);
+  background-color: var(--background-our-works);
 }
 
 .our-works h2,
@@ -446,6 +471,34 @@ img {
   margin-top: 50px;
 }
 
+.lift {
+  position: relative;
+  overflow: hidden;
+}
+
+.lift-text {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  height: 100%;
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(100%);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--main-white-color);
+  padding: 63px 24px;
+}
+
+.portfolio-projects li:hover .lift-text {
+  background-color: var(--background-lift);
+  transform: translateY(0%);
+}
+
 .portfolio-picture {
   border: 1px solid var(--portfolio-border-color);
   border-top: none;
@@ -460,11 +513,44 @@ img {
   margin-bottom: 4px;
 }
 
-.portfolio p {
+.portfolio-topic {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.88;
   color: var(--tel-color);
+}
+/* ------------------backdrop--------------- */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 528px;
+  min-width: 581px;
+  padding: 15px;
+  background-color: var(--main-white-color);
+  border-radius: 4px;
+}
+
+.button-modal {
+  position: absolute;
+  top: 8px;
+  right: 8px;
 }
 
 /* -------------footer----------------- */
