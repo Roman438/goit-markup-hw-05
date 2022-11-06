@@ -143,6 +143,7 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header li:not(:last-child) {
@@ -157,6 +158,7 @@ img {
   letter-spacing: 0.02em;
   color: var(--tel-color);
   align-items: center;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .tel-mail span {
@@ -213,6 +215,7 @@ img {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   width: 216px;
   height: 50px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero button:hover,
@@ -367,6 +370,8 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-soc-item > a:hover,
@@ -417,13 +422,14 @@ img {
   border-radius: 4px;
   justify-content: center;
   align-items: center;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-item > a:hover,
 .client-item > a:focus {
   fill: var(--main-blue-color);
-  border: 1px solid var(--main-blue-color);
-  border-radius: 4px;
+  border-color: var(--main-blue-color);
 }
 
 /* ---------------portfolio--------------- */
@@ -436,6 +442,9 @@ img {
   color: var(--primary-text-color);
   background-color: var(--background-portfolio-nav);
   padding: 6px 25px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-nav:hover,
@@ -496,10 +505,10 @@ img {
   letter-spacing: 0.03em;
   color: var(--main-white-color);
   padding: 63px 24px;
+  background-color: var(--background-lift);
 }
 
 .portfolio-projects li:hover .lift-text {
-  background-color: var(--background-lift);
   transform: translateY(0%);
 }
 
@@ -522,50 +531,6 @@ img {
   font-size: 16px;
   line-height: 1.88;
   color: var(--tel-color);
-}
-/* ------------------backdrop--------------- */
-
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-.backdrop.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-height: 581px;
-  min-width: 528px;
-  background-color: var(--main-white-color);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-}
-
-.button-modal {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 30px;
-  height: 30px;
-  padding: 0;
-  border: none;
-  background-color: var(--main-white-color);
-  color: black;
-}
-
-.button-modal svg {
-  fill: brown;
 }
 
 /* -------------footer----------------- */
@@ -613,6 +578,7 @@ img {
   height: 100%;
   color: var(--main-white-color);
   background-color: var(--footer-bg-soc);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 50%;
   border: none;
   align-items: center;
@@ -645,10 +611,12 @@ img {
 
 .address-contacts {
   color: var(--footer-address-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-footer {
   color: var(--main-white-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer span {
@@ -665,4 +633,59 @@ img {
 .footer-icon > a:hover,
 .footer-icon > a:focus {
   background-color: var(--main-blue-color);
+}
+
+/* ------------------backdrop--------------- */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 581px;
+  min-width: 528px;
+  background-color: var(--main-white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.button-modal {
+  cursor: pointer;
+  border: none;
+  width: 30px;
+  height: 30px;
+  background: var(--main-white-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  padding: 0px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: var(--logo-black-color);
+}
+
+.icon-close {
+  display: block;
+  fill: currentColor;
 }
